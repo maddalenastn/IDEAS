@@ -22,7 +22,11 @@ dependencies = [
     "numpy",
     "scipy",
     "matplotlib",
-    "tqdm"
+    "tqdm",
+    "anndata",
+    "scanpy",
+    "dadapy",
+    "sklearn"
 ]
 
 [tool.setuptools.packages.find]

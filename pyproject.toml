@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "compute_id"
+version = "0.1.0"
+description = "A package for scRNA-seq analysis"
+readme = "README.md"
+authors = [
+    { name = "Maddalena Staiano" }
+]
+license = { text = "MIT" }
+requires-python = ">=3.6"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent"
+]
+
+dependencies = [
+    "numpy",
+    "scipy",
+    "matplotlib",
+    "tqdm"
+]
+
+[tool.setuptools.packages.find]
+where = ["computeID/"]

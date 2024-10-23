@@ -1,6 +1,6 @@
 # IDEAS
 
-Un pacchetto per calcolare la dimensione intrinseca dei dati di scRNA-seq.
+A package to estimate the Intrinsic Dimension of scRNA-seg data
 
 ## Installazione
 

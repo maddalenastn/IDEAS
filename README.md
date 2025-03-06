@@ -1,6 +1,12 @@
 # IDEAS
 
-A package to estimate the Intrinsic Dimension of scRNA-seq data
+A package to estimate the Intrinsic Dimension of scRNA-seq data. 
+
+Notebooks content: 
+
+-"Clustering_Preprocesing": analysis of the first dataset (Tran et al.) starting from the raw data (Tran.h5ad). The pipeline includes clustering, pluripotency score estimation, cluster ordering through pluripotency, pseudotime analsyis. It ends by saving two separate files (FBS_IDEAS.h5ad, A2S_IDEAS.h5ad) that contain in the obs and obsm the result of the analysis, but have the raw counts in the adata.X.
+
+-""
 
 ## Installazione
 

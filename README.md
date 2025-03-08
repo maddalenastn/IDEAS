@@ -7,7 +7,7 @@ A package to estimate the Intrinsic Dimension of scRNA-seq data.
 - **Clustering_Preprocesing.ipynb** : analysis of the first dataset (Tran et al.) starting from the raw data (Tran.h5ad). The pipeline includes clustering, pluripotency score estimation, cluster ordering through pluripotency, pseudotime analsyis. It ends by saving two separate files (FBS_IDEAS.h5ad, A2S_IDEAS.h5ad) that contain in the obs and obsm the result of the analysis, but have the raw counts in the adata.X.
 
 *Changes needed* : 
-    - check/change pluripotency score definition; 
+    - check/change pluripotency score definition (check functions *import_differentiation_markers*, *compute_cluster_pluripotency*, *compute_singlecell_pluripotency*)
     - it containes all the functions to compute ID written in the notebbok, it would instead need to import the functions_IDEAS.py
 ***
 - **Local_ID.ipynb** : local ID estimation analysis of the first dataset (Tran et al.), the third dataset (Nair et al.) and the Xenopus dataset, which is not in the article (yet). THe local ID is added as a obs column, having for each cell the local ID estimation obtained bu using that cell as root cell.

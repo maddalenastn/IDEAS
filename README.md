@@ -9,7 +9,12 @@ A package to estimate the Intrinsic Dimension of scRNA-seq data.
 *Changes needed* : 
     - check/change pluripotency score definition (check functions *import_differentiation_markers*, *compute_cluster_pluripotency*, *compute_singlecell_pluripotency*)
     - it containes all the functions to compute ID written in the notebbok, it would instead need to import the functions_IDEAS.py
-***
+___
+
+- **FIGURE2.ipynb** : Produces figure 2 from the adata obtained in the "Clustering_Preprocesing.ipynb" notebook.
+
+___
+
 - **Local_ID.ipynb** : local ID estimation analysis of the first dataset (Tran et al.), the third dataset (Nair et al.) and the Xenopus dataset, which is not in the article (yet). THe local ID is added as a obs column, having for each cell the local ID estimation obtained bu using that cell as root cell.
     - Tran : takes in input the preproccesed data  (FBS_IDEAS.h5ad, A2S_IDEAS.h5ad) and retrieves the same data with the local ID annotation in the obs (FBS_to_plot.h5ad, A2S_to_plot.h5ad). 
     - Nair : Adds the local ID annotaion in the obs (Nair_local_ID.h5ad). In addition to the local ID analysis, the pseudotime is calculated on the three different trajectories within the data (fibroblast-like, partial reprogramming, reprogramming). The final data with annotiation on both local ID and pseudotime is saved separately for the three trajectories (Nair_FIBRO_to_plot.h5ad, Nair_PARTIAL_to_plot.h5ad, /Nair_REP_to_plot.h5ad).
@@ -18,12 +23,9 @@ A package to estimate the Intrinsic Dimension of scRNA-seq data.
 *Changes needed* : 
     - change the number of neighbors and check results
     - Xenopus analysis update
+___
 
 - **FIGURE_Local_ID.ipynb** : produces the figures from the adata obtained in "Local_ID" for both the Tran et al. dataset and the Nair et al. dataset. It includes umap visualization of local ID, pseudotime, pluripotency score and scatter plots of the trends of local ID vs pseudotime and local ID vs pluripotency. 
-
-***
-
-- **FIGURE2.ipynb** : Produces figure 2 from the adata obtained in the "Clustering_Preprocesing" notebook.
 
 ## Installation
 
@@ -40,19 +42,19 @@ Then you need to activate the environment
 conda activate compute_id
 ```
 
-Then you need to clone this repository 
+And clone this repository by 
 
 ```bash
 git clone https://github.com/maddalenastn/IDEAS.git
 ```
 
-Then going inside the main folder
+Then go to the main folder
 
 ```bash
 cd IDEAS/
 ```
 
-And finally you can build the package:
+And  you can finally build the package by:
 
 ```bash
 pip install -e .

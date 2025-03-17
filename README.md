@@ -8,16 +8,19 @@ A package to estimate the Intrinsic Dimension of scRNA-seq data.
 
 *Changes needed* : 
     - check/change pluripotency score definition (check functions *import_differentiation_markers*, *compute_cluster_pluripotency*, *compute_singlecell_pluripotency*)
-    - it containes all the functions to compute ID written in the notebbok, it would instead need to import the functions_IDEAS.py
+    - it contains all the functions to compute ID written in the notebbok, it would instead need to import the functions_IDEAS.py
 ___
 
 - **FIGURE2.ipynb** : Produces figure 2 from the adata obtained in the "Clustering_Preprocesing.ipynb" notebook.
 
+*Changes needed* : 
+    - normalization in the ID trend plot
+
 ___
 
-- **Local_ID.ipynb** : local ID estimation analysis of the first dataset (Tran et al.), the third dataset (Nair et al.) and the Xenopus dataset, which is not in the article (yet). THe local ID is added as a obs column, having for each cell the local ID estimation obtained bu using that cell as root cell.
+- **Local_ID.ipynb** : local ID estimation analysis of the first dataset (Tran et al.), the third dataset (Nair et al.) and the Xenopus dataset, which is not in the article (yet). The local ID is added as a obs column, having for each cell the local ID estimation obtained by using that cell as root cell.
     - Tran : takes in input the preproccesed data  (FBS_IDEAS.h5ad, A2S_IDEAS.h5ad) and retrieves the same data with the local ID annotation in the obs (FBS_to_plot.h5ad, A2S_to_plot.h5ad). 
-    - Nair : Adds the local ID annotaion in the obs (Nair_local_ID.h5ad). In addition to the local ID analysis, the pseudotime is calculated on the three different trajectories within the data (fibroblast-like, partial reprogramming, reprogramming). The final data with annotiation on both local ID and pseudotime is saved separately for the three trajectories (Nair_FIBRO_to_plot.h5ad, Nair_PARTIAL_to_plot.h5ad, /Nair_REP_to_plot.h5ad).
+    - Nair : Adds the local ID annotaion in the obs (Nair_local_ID.h5ad). In addition to the local ID analysis, the pseudotime is calculated on the three different trajectories within the data (fibroblast-like, partial reprogramming, reprogramming). The final data with annotiation on both local ID and pseudotime is saved separately for the three trajectories (Nair_FIBRO_to_plot.h5ad, Nair_PARTIAL_to_plot.h5ad, Nair_REP_to_plot.h5ad).
     - Xenopus: still needs to be changed, ignore it for now
 
 *Changes needed* : 
@@ -32,14 +35,21 @@ ___
 To install the package, we recommend that you first create a new environment
 
 ```bash 
-conda create -n compute_id python 
+conda env create  --file IDEAS_environment.yml 
 ```
+
+Or if you use pip you can use 
+
+```bash 
+pip install -r requirements.txt
+```
+
+Note that the current version of python used for this repository is 3.11.6
 
 Then you need to activate the environment
 
-
 ```bash 
-conda activate compute_id
+conda activate ideas-env
 ```
 
 And clone this repository by 

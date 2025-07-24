@@ -9,8 +9,6 @@ ___
 
 - **FIGURE2.ipynb** : Produces figure 2 from the adata obtained in the "Clustering_Preprocesing.ipynb" notebook.
 
-*Changes needed* : 
-    - normalization in the ID trend plot?
 
 ___
 

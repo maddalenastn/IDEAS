@@ -14,9 +14,7 @@ This repository provides code, data, and tutorials for reproducing the main anal
 
 - **`Notebooks/`**  
 Jupyter Notebooks for reproducing the main figures of the article.  
-Each notebook is named according to the corresponding figure.  
-- `Local_ID.ipynb` computes local intrinsic dimensionality used for **Figure 5**.  
-> All notebooks require an `anndata` object created as described in the [Datasets and Reproduction](#-datasets--reproduction-instructions) section.
+Each notebook is named according to the corresponding figure. `Local_ID.ipynb` computes local intrinsic dimensionality used for **Figure 5**. All notebooks require an `anndata` object created as described in the [Datasets and Reproduction](#-datasets--reproduction-instructions) section.
 
 - **`Metadata/`**  
   Metadata extracted from public datasets. These correspond to the `.obs` attribute of the `anndata` objects and include clustering results, pluripotency scores, and pseudotime annotations.
@@ -119,4 +117,4 @@ pip install -e .
 ## Contact and Citation
 
 If you use IDEAS in your research, please cite:   
-🔗 _[[Staiano et al.](https://doi.org/10.1101/2025.07.21.665922)]_
+🔗 [Staiano et al.](https://doi.org/10.1101/2025.07.21.665922)

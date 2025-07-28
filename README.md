@@ -17,7 +17,7 @@ Jupyter Notebooks for reproducing the main figures of the article.
 Each notebook is named according to the corresponding figure. `Local_ID.ipynb` computes local intrinsic dimensionality used for **Figure 5**. All notebooks require an `anndata` object created as described in the [Datasets and Reproduction](#-datasets--reproduction-instructions) section.
 
 - **`Metadata/`**  
-  Metadata extracted from public datasets. These correspond to the `.obs` attribute of the `anndata` objects and include clustering results, pluripotency scores, and pseudotime annotations.
+  Metadata extracted from open access datasets. These correspond to the `.obs` attribute of the `anndata` objects and include clustering results, pluripotency scores, and pseudotime annotations.
 
 ---
 

@@ -21,6 +21,32 @@ Each notebook is named according to the corresponding figure. `Local_ID.ipynb` c
 
 ---
 
+## Input and output
+
+| Input Name     | Type             | Default                  | Description |
+|----------------|------------------|--------------------------|-------------|
+| `adata`        | AnnData object   | —                        | scRNA-seq data matrix with annotations. |
+| `group`        | str              | `'all'`                  | Name of `.obs` column to group cells for ID computation. If `'all'`, all cells are treated as one group. |
+| `method`       | str              | `'2nn'`                  | Method for computing intrinsic dimension. Options: `'pca'`, `'local_pca'`, `'2nn'`, `'local_2nn'`. |
+| `roots`        | list             | `None`                   | List of cell names used as roots for local methods (`'local_2nn'`, `'local_pca'`). If `None`, all cells are used. Ignored for non-local methods (`'2nn'`, `'pca'`). |
+| `variance_e`   | float            | `0.9`                    | Percentage of explained variance for PCA-based methods. Ignored if method is not `'pca'` or `'local_pca'`. |
+| `sample_size`  | int              | 80% of the smallest group| Number of cells per sample for global methods.|
+| `n_neighbors`  | int              | 10% of total number of cells  | Number of neighbors for local methods. Ignored for non-local methods (`'2nn'`, `'pca'`).  |
+| `n_samples`    | int              | `30`                     | Number of random sub-samples used to estimate ID in global methods. Ignored in local methods. |
+| `normalization`| bool             | `True`                   | If `True`, performs total-count normalization. |
+| `norm_sum`     | int              | `1e6`                    | Target sum for normalization if `normalization=True`. |
+| `full_output`  | bool             | `True`                   | Determines the output formatting. Ignored for local methods. |
+| `id_score`     | bool             | `False`                  | If `True`, scales ID values between 0 and 1 (min-max normalization across results). |
+
+
+| Method Type | `full_output` | Return Type       | Description |
+|-------------|---------------|-------------------|-------------|
+| `'2nn'`, `'pca'` | `False`        | `pandas.DataFrame` (2 rows × n groups) | Returns mean and standard deviation of intrinsic dimension for each group. |
+| `'2nn'`, `'pca'` | `True`         | `pandas.DataFrame` (n_samples × n groups) | Returns full matrix of IDs: each row is a random sub-sample, each column is a group, values are ID estimates. |
+| `'local_2nn'`, `'local_pca'` | *Ignored*      | `pandas.DataFrame` (n roots × 1) | Returns a single-column DataFrame: rows are root cell barcodes, values are local ID estimates. |
+
+---
+
 ## Instructions for reproducing figures from datasets
 
 To reproduce the figures from the article, follow the instructions below for each dataset:

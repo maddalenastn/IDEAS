@@ -28,11 +28,11 @@ Each notebook is named according to the corresponding figure. `Local_ID.ipynb` c
 | `adata`        | AnnData object   | —                        | scRNA-seq data matrix with annotations. |
 | `group`        | str              | `'all'`                  | Name of `.obs` column to group cells for ID computation. If `'all'`, all cells are treated as one group. |
 | `method`       | str              | `'2nn'`                  | Method for computing intrinsic dimension. Options: `'pca'`, `'local_pca'`, `'2nn'`, `'local_2nn'`. |
-| `roots`        | list             | `None`                   | List of cell names used as roots for local methods (`'local_2nn'`, `'local_pca'`). If `None`, all cells are used. Ignored for non-local methods (`'2nn'`, `'pca'`). |
+| `roots`        | list             | `None`                   | List of cell names used as roots for local methods. (`'local_2nn'`, `'local_pca'`). If `None`, all cells are used. Ignored for non-local methods (`'2nn'`, `'pca'`). |
 | `variance_e`   | float            | `0.9`                    | Percentage of explained variance for PCA-based methods. Ignored if method is not `'pca'` or `'local_pca'`. |
-| `sample_size`  | int              | 80% of the smallest group| Number of cells per sample for global methods.|
-| `n_neighbors`  | int              | 10% of total number of cells  | Number of neighbors for local methods. Ignored for non-local methods (`'2nn'`, `'pca'`).  |
-| `n_samples`    | int              | `30`                     | Number of random sub-samples used to estimate ID in global methods. Ignored in local methods. |
+| `sample_size`  | int              | 80% of the smallest group| Number of cells per random sub-sampling. Ignored for local methods. |
+| `n_samples`    | int              | `30`                     | Number of random sub-samplings used to estimate ID. Ignored in local methods. |
+| `n_neighbors`  | int              | 10% of total number of cells  | Number of neighbors for local sub-sampling. Ignored for non-local methods (`'2nn'`, `'pca'`).  |
 | `normalization`| bool             | `True`                   | If `True`, performs total-count normalization. |
 | `norm_sum`     | int              | `1e6`                    | Target sum for normalization if `normalization=True`. |
 | `full_output`  | bool             | `True`                   | Determines the output formatting. Ignored for local methods. |

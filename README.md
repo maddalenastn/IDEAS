@@ -1,7 +1,7 @@
 # IDEAS
 
 A package to estimate the Intrinsic Dimension of scRNA-seq data. 
-This repository provides code, data, and tutorials for reproducing the main analyses presented in our [article](https://doi.org/10.1101/2025.07.21.665922). The core of the repository is **IDEAS** (Intrinsic Dimensionality Estimation Analysis of Single-cell RNA sequencing data), which enables the study of cell potency in single-cell transcriptomic data by estimating their intrinsic dimension (ID). 
+This repository provides code, data, and tutorials for reproducing the main analyses presented in our article [Staiano et al.](https://doi.org/10.1101/2025.07.21.665922). The core of the repository is **IDEAS** (Intrinsic Dimensionality Estimation Analysis of Single-cell RNA sequencing data), which enables the study of cell potency in single-cell transcriptomic data by estimating their intrinsic dimension (ID). 
 
 
 ## Repository Structure:
@@ -34,7 +34,7 @@ To reproduce the figures from the article, follow the instructions below for eac
 
 ---
 
-### Dataset 1: Tran et al.  
+### Dataset 1: [Tran et al.](https://www.cell.com/cell-reports/fulltext/S2211-1247(19)30529-7?_returnURL=https%3A%2F%2Flinkinghub.elsevier.com%2Fretrieve%2Fpii%2FS2211124719305297%3Fshowall%3Dtrue)
 - **GEO Accession**: GSE108222
 - **Metadata Files**:
   - `Metadata_FBS_fig2.csv`
@@ -49,21 +49,21 @@ Save the updated object and use it in the corresponding figure notebook.
 
 ---
 
-### Dataset 2: Francesconi et al.  
+### Dataset 2: [Francesconi et al.](https://doi.org/10.7554/eLife.41627) 
 - **GEO Accession**: GSE112004
 - **Metadata File**: `Metadata_fig3.csv`  
 - **Resulting AnnData File**: `Francesconi.h5ad`
 
 ---
 
-### Dataset 3: Nair et al.  
+### Dataset 3: [Nair et al.](https://doi.org/10.1101/2023.10.04.560808)
 - **GEO Accession**: GSE242424
 - **Metadata File**: `Metadata_fig4.csv`  
 - **Resulting AnnData File**: `Nair.h5ad`
 
 ---
 
-### Dataset 4: Zikmund et al.  
+### Dataset 4: [Zikmund et al.](https://doi.org/10.1016/j.stemcr.2025.102447)
 - **GEO Accession**: GSE269252 
 - **Metadata Files**:
   - `Metadata_fig5_xenopusNT.csv`

@@ -1,25 +1,79 @@
 # IDEAS
 
 A package to estimate the Intrinsic Dimension of scRNA-seq data. 
-
-## Notebooks  content:
-
-- **Clustering_Preprocesing.ipynb** : analysis of the first dataset (Tran et al.) starting from the raw data (Tran.h5ad). The pipeline includes clustering, pluripotency score estimation, cluster ordering through pluripotency, pseudotime analsyis. It ends by saving two separate files (FBS_IDEAS.h5ad, A2S_IDEAS.h5ad) that contain in the obs and obsm the annotations resulting of the analysis, but have the raw counts in the adata.X.
-___
-
-- **FIGURE2.ipynb** : Produces figure 2 from the adata obtained in the "Clustering_Preprocesing.ipynb" notebook.
+This repository provides code, data, and tutorials for reproducing the main analyses presented in our article (_[[insert article link](https://doi.org/10.1101/2025.07.21.665922)]_). The core of the repository is **IDEAS** (Intrinsic Dimensionality Estimation Analysis of Single-cell RNA sequencing data), which enables the study of cell potency in single-cell transcriptomic data by estimating their intrinsic dimension (ID). 
 
 
-___
+## Repository Structure:
 
-- **Local_ID.ipynb** : local ID estimation analysis of the first dataset (Tran et al.), the third dataset (Nair et al.) and the Xenopus dataset, which is not in the article (yet). The local ID (for a certain number of neighbors chosen) is added as a obs column (es .adata.obs[local_ID_100] for 100 neighbors), having for each cell the local ID estimation obtained by using that cell as root cell. 
-    - Tran : takes in input the preproccesed data  (FBS_IDEAS.h5ad, A2S_IDEAS.h5ad) and retrieves the same data with the local ID annotation in the obs (FBS_to_plot.h5ad, A2S_to_plot.h5ad). 
-    - Nair : Adds the local ID annotaion in the obs (Nair_local_ID.h5ad). In addition to the local ID analysis, the pseudotime is calculated on the three different trajectories within the data (fibroblast-like, partial reprogramming, reprogramming). The final data with annotiation on both local ID and pseudotime is saved separately for the three trajectories (Nair_FIBRO_to_plot.h5ad, Nair_PARTIAL_to_plot.h5ad, Nair_REP_to_plot.h5ad).
-    - Xenopus: The local ID analysis is performes separately on the two experimental conditions : in vitro fertilization (IVF) and nuclear transfer (NT). Additionally, the local ID is compared between the inner and outer layer both in the NT and in the IVF condition.
+- **`computeID/`**  
+  Source code of the IDEAS pipeline.
 
-___
+- **`Tutorial/`**  
+  A Jupyter Notebook introducing how to use IDEAS on a simple dataset (Dataset 1 – FBS condition). 
 
-- **FIGURE_Local_ID.ipynb** : produces the figures from the adata obtained in "Local_ID.ipynb" for both the Tran et al. dataset and the Nair et al. dataset. It includes umap visualization of local ID, pseudotime, pluripotency score and scatter plots of the trends of local ID vs pseudotime and local ID vs pluripotency. 
+- **`Notebooks/`**  
+Jupyter Notebooks for reproducing the main figures of the article.  
+Each notebook is named according to the corresponding figure.  
+- `Local_ID.ipynb` computes local intrinsic dimensionality used for **Figure 5**.  
+> All notebooks require an `anndata` object created as described in the [Datasets](#-datasets--reproduction-instructions) section.
+
+- **`Metadata/`**  
+  Metadata extracted from public datasets. These correspond to the `.obs` attribute of the `anndata` objects and include clustering results, pluripotency scores, and pseudotime annotations.
+
+---
+
+## Datasets and Reproduction Instructions
+
+To reproduce the figures from the article, follow the instructions below for each dataset:
+
+1. Download raw data from the corresponding **GEO accession**.
+2. Filter cells (`obs_names` in the anndata object) using `CellId` in the metadata CSV files.
+3. Add the metadata to the obs of the anndata object.
+4. Use the relevant notebook in the `Notebooks/` folder to generate the figure.
+
+---
+
+### Dataset 1: Tran et al.  
+- **GEO Accession**: _[GSE108222]_  
+- **Metadata Files**:
+  - `Metadata_FBS_fig2.csv`
+  - `Metadata_A2S_fig2.csv`  
+- **Resulting AnnData Files**:
+  - `FBS_IDEAS.h5ad`
+  - `A2S_IDEAS.h5ad`
+
+`FBS_IDEAS.h5ad` is used in the **Tutorial notebook**.  
+For **Figure 5**, use the `Local_ID.ipynb` notebook to compute local intrinsic dimension and add the results to the obs of the `anndata` object.  
+Save the updated object and use it in the corresponding figure notebook.
+
+---
+
+### Dataset 2: Francesconi et al.  
+- **GEO Accession**: _[GSE112004]_  
+- **Metadata File**: `Metadata_fig3.csv`  
+- **Resulting AnnData File**: `Francesconi.h5ad`
+
+---
+
+### Dataset 3: Nair et al.  
+- **GEO Accession**: _[GSE242424]_  
+- **Metadata File**: `Metadata_fig4.csv`  
+- **Resulting AnnData File**: `Nair.h5ad`
+
+---
+
+### Dataset 4: Zikmund et al.  
+- **GEO Accession**: _[GSE269252]_  
+- **Metadata Files**:
+  - `Metadata_fig5_xenopusNT.csv`
+  - `Metadata_fig5_xenopusIVF.csv`  
+- **Resulting AnnData Files**:
+  - `Xenopus_NT_to_plot.h5ad`
+  - `Xenopus_IVF_to_plot.h5ad`
+
+---
+
 
 ## Installation
 
@@ -60,3 +114,9 @@ And  you can finally build the package by:
 ```bash
 pip install -e .
 ```
+--- 
+
+## Contact and Citation
+
+If you use IDEAS in your research, please cite:   
+🔗 _[[Insert DOI or link](https://doi.org/10.1101/2025.07.21.665922)]_

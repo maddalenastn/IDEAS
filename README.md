@@ -16,7 +16,7 @@ This repository provides code, data, and tutorials for reproducing the main anal
 Jupyter Notebooks for reproducing the main figures of the article.  
 Each notebook is named according to the corresponding figure.  
 - `Local_ID.ipynb` computes local intrinsic dimensionality used for **Figure 5**.  
-> All notebooks require an `anndata` object created as described in the [Datasets](#-datasets--reproduction-instructions) section.
+> All notebooks require an `anndata` object created as described in the [Datasets and Reproduction](#-datasets--reproduction-instructions) section.
 
 - **`Metadata/`**  
   Metadata extracted from public datasets. These correspond to the `.obs` attribute of the `anndata` objects and include clustering results, pluripotency scores, and pseudotime annotations.
@@ -49,21 +49,21 @@ Save the updated object and use it in the corresponding figure notebook.
 
 ---
 
-### Dataset 2: [Francesconi et al.](https://doi.org/10.7554/eLife.41627) 
+### Dataset 2: [Francesconi et al.](https://elifesciences.org/articles/41627) 
 - **GEO Accession**: GSE112004
 - **Metadata File**: `Metadata_fig3.csv`  
 - **Resulting AnnData File**: `Francesconi.h5ad`
 
 ---
 
-### Dataset 3: [Nair et al.](https://doi.org/10.1101/2023.10.04.560808)
+### Dataset 3: [Nair et al.](https://pubmed.ncbi.nlm.nih.gov/37873116/)
 - **GEO Accession**: GSE242424
 - **Metadata File**: `Metadata_fig4.csv`  
 - **Resulting AnnData File**: `Nair.h5ad`
 
 ---
 
-### Dataset 4: [Zikmund et al.](https://doi.org/10.1016/j.stemcr.2025.102447)
+### Dataset 4: [Zikmund et al.](https://www.cell.com/stem-cell-reports/fulltext/S2213-6711(25)00051-7?_returnURL=https%3A%2F%2Flinkinghub.elsevier.com%2Fretrieve%2Fpii%2FS2213671125000517%3Fshowall%3Dtrue)
 - **GEO Accession**: GSE269252 
 - **Metadata Files**:
   - `Metadata_fig5_xenopusNT.csv`
@@ -119,4 +119,4 @@ pip install -e .
 ## Contact and Citation
 
 If you use IDEAS in your research, please cite:   
-🔗 _[[Insert DOI or link](https://doi.org/10.1101/2025.07.21.665922)]_
+🔗 _[[Staiano et al.](https://doi.org/10.1101/2025.07.21.665922)]_

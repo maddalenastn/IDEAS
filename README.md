@@ -1,7 +1,7 @@
 # IDEAS
 
 A package to estimate the Intrinsic Dimension of scRNA-seq data. 
-This repository provides code, data, and tutorials for reproducing the main analyses presented in our article (_[[insert article link](https://doi.org/10.1101/2025.07.21.665922)]_). The core of the repository is **IDEAS** (Intrinsic Dimensionality Estimation Analysis of Single-cell RNA sequencing data), which enables the study of cell potency in single-cell transcriptomic data by estimating their intrinsic dimension (ID). 
+This repository provides code, data, and tutorials for reproducing the main analyses presented in our [article](https://doi.org/10.1101/2025.07.21.665922). The core of the repository is **IDEAS** (Intrinsic Dimensionality Estimation Analysis of Single-cell RNA sequencing data), which enables the study of cell potency in single-cell transcriptomic data by estimating their intrinsic dimension (ID). 
 
 
 ## Repository Structure:
@@ -35,7 +35,7 @@ To reproduce the figures from the article, follow the instructions below for eac
 ---
 
 ### Dataset 1: Tran et al.  
-- **GEO Accession**: _[GSE108222]_  
+- **GEO Accession**: GSE108222
 - **Metadata Files**:
   - `Metadata_FBS_fig2.csv`
   - `Metadata_A2S_fig2.csv`  
@@ -50,21 +50,21 @@ Save the updated object and use it in the corresponding figure notebook.
 ---
 
 ### Dataset 2: Francesconi et al.  
-- **GEO Accession**: _[GSE112004]_  
+- **GEO Accession**: GSE112004
 - **Metadata File**: `Metadata_fig3.csv`  
 - **Resulting AnnData File**: `Francesconi.h5ad`
 
 ---
 
 ### Dataset 3: Nair et al.  
-- **GEO Accession**: _[GSE242424]_  
+- **GEO Accession**: GSE242424
 - **Metadata File**: `Metadata_fig4.csv`  
 - **Resulting AnnData File**: `Nair.h5ad`
 
 ---
 
 ### Dataset 4: Zikmund et al.  
-- **GEO Accession**: _[GSE269252]_  
+- **GEO Accession**: GSE269252 
 - **Metadata Files**:
   - `Metadata_fig5_xenopusNT.csv`
   - `Metadata_fig5_xenopusIVF.csv`  

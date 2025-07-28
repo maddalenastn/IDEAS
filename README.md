@@ -36,7 +36,7 @@ Each notebook is named according to the corresponding figure. `Local_ID.ipynb` c
 | `normalization`| bool             | `True`                   | If `True`, performs total-count normalization. |
 | `norm_sum`     | int              | `1e6`                    | Target sum for normalization if `normalization=True`. |
 | `full_output`  | bool             | `True`                   | Determines the output formatting. Ignored for local methods. |
-| `id_score`     | bool             | `False`                  | If `True`, scales ID values between 0 and 1 (min-max normalization across results). |
+| `id_score`     | bool             | `False`                  | If `True`, rescales ID values between 0 and 1. |
 
 
 | Method Type | `full_output` | Return Type       | Description |

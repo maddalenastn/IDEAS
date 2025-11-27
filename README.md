@@ -41,7 +41,7 @@ Each notebook is named according to the corresponding figure. `Local_ID.ipynb` c
 
 | Method Type | `full_output` | Return Type       | Description |
 |-------------|---------------|-------------------|-------------|
-| `'2nn'`, `'pca'` | `False`        | `pandas.DataFrame` (2 rows × n groups) | Returns mean and standard deviation of intrinsic dimension for each group. |
+| `'2nn'`, `'pca'` | `False`        | `pandas.DataFrame` (2 rows × n groups) | Returns mean and standard deviation of IDs for each group. |
 | `'2nn'`, `'pca'` | `True`         | `pandas.DataFrame` (n_samples × n groups) | Returns full matrix of IDs: each row is a random sub-sample, each column is a group, values are ID estimates. |
 | `'local_2nn'`, `'local_pca'` | *Ignored*      | `pandas.DataFrame` (n roots × 1) | Returns a single-column DataFrame: rows are root cell barcodes, values are local ID estimates. |
 
